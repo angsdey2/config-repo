@@ -1,0 +1,10 @@
+spring:
+  profiles: dev
+
+eureka:
+  instance:
+    nonSecurePort: 80
+    hostname: ${vcap.application.uris[0]}
+  client:
+    service-url:
+      defaultZone: ${vcap.services.service-urls.credentials.eureka_url}
